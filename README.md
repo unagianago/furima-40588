@@ -2,14 +2,16 @@
 
 ## users テーブル
 
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| birthday           | string | null: false |
-| nickname           | string | null: false |
-| name               | string | null: false |
-| name_sub           | string | null: false |
-| mail               | string | null: false, unique: true |
-| encrypted_password | string | null: false |
+| Column             | Type   | Options                     |
+| ------------------ | ------ | --------------------------- |
+| birthday           | date   | null: false                 |
+| nickname           | string | null: false                 |
+| first_name         | string | null: false                 |
+| last_name          | string | null: false                 |
+| first_name_sub     | string | null: false                 |
+| last_name_sub      | string | null: false                 |
+| email              | string | null: false, unique: true   |
+| encrypted_password | string | null: false                 |
 
 ### Association
 
@@ -18,18 +20,17 @@
 
 ## items テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| image  | string | null: false |
-| name   | string | null: false |
-| content   | text | null: false |
-| category   | string | null: false |
-| condition   | string | null: false |
-| price   | integer | null: false |
-| delivery_cost   | string | null: false |
-| delivery_area   | string | null: false |
-| delivery_time   | string | null: false |
-| user   | references | null: false, foreign_key: true |
+| Column             | Type       | Options                         |
+| ------------------ | ---------- | ------------------------------- |
+| name               | string     | null: false                     |
+| content            | text       | null: false                     |
+| price              | integer    | null: false                     |
+| category_id        | integer    | null: false                     |
+| condition_id       | integer    | null: false                     |
+| area_id            | integer    | null: false                     |
+| delivery_cost_id   | integer    | null: false                     |
+| delivery_time_id   | integer    | null: false                     |
+| user               | references | null: false, foreign_key: true  |
 
 ### Association
 
@@ -54,11 +55,11 @@
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | post_code     | string     | null: false                    |
-| area          | string     | null: false                    |
 | town          | string     | null: false                    |
 | house_number  | string     | null: false                    |
 | building      | string     |                                |
-| phone_number  | integer    | null: false                    |
+| phone_number  | string     | null: false                    |
+| area_id       | integer    | null: false                    |
 | order         | references | null: false, foreign_key: true |
 
 ### Association
