@@ -9,9 +9,9 @@ class Item < ApplicationRecord
   belongs_to :delivery_cost
   belongs_to :delivery_time
 
-  validates :name, :string, presence: true
-  validates :content, :text, presence: true
-  validates :price, :integer, presence: true
+  validates :name, presence: true
+  validates :content, presence: true
+  validates :price, presence: true
 
   validates :category_id, numericality: { other_than: 1 } 
   validates :condition_id, numericality: { other_than: 1 } 
