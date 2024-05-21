@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-
   before_action :authenticate_user!, only: [:new]
 
   def index
@@ -21,11 +20,11 @@ class ItemsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
 end
 
 private
 
-  def item_params
-    params.require(:item).permit(:name,:content, :image, :price, :category_id, :condition_id, :area_id, :delivery_cost_id, :delivery_time_id).merge(user_id: current_user.id)
-  end
+def item_params
+  params.require(:item).permit(:name, :content, :image, :price, :category_id, :condition_id, :area_id, :delivery_cost_id,
+                               :delivery_time_id).merge(user_id: current_user.id)
+end
