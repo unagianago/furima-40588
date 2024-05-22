@@ -8,7 +8,7 @@ class OrderForm
 
   def save
     ActiveRecord::Base.transaction do
-      Order.create(
+      order = Order.create(
         user_id: user_id,
         item_id: item_id
       )
@@ -25,5 +25,5 @@ class OrderForm
     end
 
   end
-  
+
 end
