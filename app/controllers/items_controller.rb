@@ -38,6 +38,15 @@ class ItemsController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    if user_signed_in?
+      item = Item.find(params[:id])
+      item.destroy
+      redirect_to root_path
+    end
+  end
+
 end
 
 private
