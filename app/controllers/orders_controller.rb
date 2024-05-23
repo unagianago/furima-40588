@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index]
+  before_action :item_information, only: [:index,:create]
   def index
     gon.public_key = ENV['PAYJP_PUBLIC_KEY']
     @order_address = OrderAddress.new
-    item_information
     return unless (current_user != @item.user && !@item.order.nil?) || (current_user == @item.user)
 
     redirect_to root_path
@@ -11,7 +11,6 @@ class OrdersController < ApplicationController
 
   def create
     @order_address = OrderAddress.new(order_params)
-    item_information
     if @order_address.valid?
       pay_item
       @order_address.save
