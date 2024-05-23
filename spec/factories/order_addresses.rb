@@ -6,8 +6,6 @@ FactoryBot.define do
     building { 'パークタウン' }
     phone_number { Faker::Number.between(from: 1_000_000_000, to: 99_999_999_999) }
     area_id { Faker::Number.between(from: 2, to: 48) }
-    user_id { Faker::Number }
-    item_id { Faker::Number }
     token { 'tok_abcdefghijk00000000000000000' }
   end
 end
