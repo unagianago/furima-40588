@@ -3,7 +3,7 @@ class OrderAddress
   attr_accessor :user_id,:item_id,:post_code,:town,:house_number,:building,:phone_number,:area_id
 
   with_options presence: true do
-    validates :user_id,:item_id,:post_code,:town,:house_number,:phone_number
+    validates :user_id,:item_id,:town,:house_number
     validates :post_code, format: { with: /\A\d{3}-\d{4}\z/}
     validates :phone_number, format: { with: /\A\d{10,11}\z/}
   end
