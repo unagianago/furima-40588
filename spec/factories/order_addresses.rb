@@ -4,10 +4,10 @@ FactoryBot.define do
     town { '茅ヶ崎市' }
     house_number { '2-4' }
     building { 'パークタウン' }
-    phone_number { Faker::Number.between(from: 1000000000, to: 99999999999) }
+    phone_number { Faker::Number.between(from: 1_000_000_000, to: 99_999_999_999) }
     area_id { Faker::Number.between(from: 2, to: 48) }
     user_id { Faker::Number }
     item_id { Faker::Number }
-    token {"tok_abcdefghijk00000000000000000"}
+    token { 'tok_abcdefghijk00000000000000000' }
   end
 end
