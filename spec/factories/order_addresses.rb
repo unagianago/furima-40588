@@ -8,5 +8,6 @@ FactoryBot.define do
     area_id { Faker::Number.between(from: 2, to: 48) }
     user_id { Faker::Number }
     item_id { Faker::Number }
+    token {"tok_abcdefghijk00000000000000000"}
   end
 end
