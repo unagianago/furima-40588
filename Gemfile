@@ -83,6 +83,7 @@ group :production do
   gem 'unicorn', '6.1.0'
 end
 
+gem 'pg'
 gem 'devise'
 gem 'pry-rails'
 gem 'mini_magick'
@@ -91,4 +92,3 @@ gem 'active_hash'
 gem 'payjp'
 gem 'gon'
 gem "aws-sdk-s3", require: false
-gem 'pg'
